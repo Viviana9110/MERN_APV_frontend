@@ -15,7 +15,6 @@ import { AuthProvider } from './context/AuthProvider'
 import { PacientesProvider } from './context/PacientesProvider'
 
 function App() {
-
   return (
     <BrowserRouter>
     <AuthProvider>
@@ -27,17 +26,12 @@ function App() {
         <Route path='olvide-password' element={<OlvidePassword />} />
         <Route path='olvide-password/:token' element={<NuevoPassword />} />
         <Route path='confirmar/:id' element={<ConfirmarCuenta />} />
-
-
       </Route>
-
       <Route path='/admin' element={<RutaProtegida />}>
-        <Route index element={<AdministrarPacientes />} />
-              
+        <Route index element={<AdministrarPacientes />} />             
       </Route>
       <Route path='perfil' element={<EditarPerfil />} />
       <Route path='cambiar-password' element={<CambiarPassword />} />
-
     </Routes>
     </PacientesProvider>
     </AuthProvider>
